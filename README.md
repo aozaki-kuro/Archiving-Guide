@@ -31,6 +31,10 @@ IF YOU HAVE ANY PROBLEMS, READ THE `README.MD` IN EVERY REPO FIRST.
 - [FAQ](/General/FAQ.md)
 - [Issues](https://github.com/aozaki-kuro/archive-guide/issues/new?assignees=&labels=question&template=questions.md&title=%5BQuestion%5D+)
 
+\* SPWN and other site please see `Generic .m3u8`
+
+\*\* Check the support list of `youtube-dl` and `streamlink` to see if the target site is supported
+
 ## 🚧 Disclaimer
 
 1. This Guide was written under CC BY-NC-SA 4.0 license, please confirm the guidelines before reposting.
