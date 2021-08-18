@@ -1,12 +1,15 @@
 ## 🔨 Tool Preparation
 
-- streamlink - stream recording tool [[Github](https://github.com/streamlink/streamlink)]
-- ffmpeg [[Github](https://github.com/FFmpeg/FFmpeg)] [[Guide Here](http://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/)]
-- Stream Recorder - stream recording tool [[Chrome Store](https://chrome.google.com/webstore/detail/stream-recorder-download/iogidnfllpdhagebkblkgbfijkbkjdmm)]
+|Tool|Description|Download|
+|:--:|:--:|:--:|
+|streamlink|Live stream recording tool|[Github](https://github.com/streamlink/streamlink)
+|minyami|Niconico timeshift downloader|[Github](https://github.com/Last-Order/Minyami)|
+|ffmpeg|Fundemental media processor|[Github](https://github.com/FFmpeg/FFmpeg)|
+|Stream Recorder|Stream recording extension|[Chrome Store](https://chrome.google.com/webstore/detail/stream-recorder-download/iogidnfllpdhagebkblkgbfijkbkjdmm)|
 
 ## 🎪 Windows Environment Preparation
 
-[![Windows10](https://img.shields.io/badge/Windows%2010-20H2-blue)](https://www.microsoft.com/en-us/software-download/windows10)
+![Windows 10](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
 **※ If you are working on a headless server like I do, please read the [advanced guide](/Advanced/server.md)**
 
@@ -19,9 +22,9 @@ Run Command Prompt (cmd) as administrator. Then paste the following into the con
 ```powershell
 setx /M PATH "%PATH%;<REPLACE THIS WITH THE PATH TO YOUR DIRECTORY>"
 ```
-The `REPLACE THIS WITH THE PATH TO YOUR DIRECTORY` part should be the folder want to save the tools. In [this case](/assets/dir1.PNG) it sould be "J:\Youtube Downloading"
+The `REPLACE THIS WITH THE PATH TO YOUR DIRECTORY` part should be the folder want to save the tools. In [this case](/assets/dir1.PNG) it sould be `J:\Youtube Downloading`.
 
-nce you are done, put the tools in the folder. Start cmd (doesn't not have to be as administrator) and run the commands `youtube-dl --help` or `streamlink -h` etc. If you see a giant block of text showing you the arguments, that means it's working.
+Once you are done, put the tools in the folder. Start cmd (doesn't not have to be as administrator) and run the commands `youtube-dl --help` or `streamlink -h` etc. If you see a giant block of text showing you the arguments, that means it's working.
 
 Tips: 
 
@@ -33,7 +36,7 @@ Another alternative way to install these are by using `pip3`. Just install `pyth
 
 ## Usage
 
-### 🚩 Streamlink
+### 🚩 streamlink
 
 **※ If you don't want to do the configure yourself, you can use the scripts provided [here](/scripts)**
 
@@ -50,6 +53,39 @@ Notice:
 3. I personally don't suggest recording the Niconico stream during live, the network might broke up when switching from free to paid corner
 
 If you don't want to type your `EMAIL` and `PASSWORD` here, you can use `--niconico-user-session` instead. You can extract the cookies by using `cookies.txt` plugin.
+
+### 🚩 Minyami
+
+This is a project working pretty efficently in Niconico Timeshift (stream archive) downloading.
+
+You don't have to wait for hours when downloading the archive.
+
+#### Installation
+First, you have to install a `Node.js` environment.
+
+For Windows, download `Node.js` installer from the [official page](https://nodejs.org/en/download/), Linux please follow the advanced guide.
+
+Once you are done with installing, type `npm -v` to see if `npm` is functioning properly.
+
+Type `npm i -g minyami` to install `minyami`.
+
+Type `minyami version` to see if minyami installed.
+
+Install the [chrome extension](https://chrome.google.com/webstore/detail/minyami/cgejkofhdaffiifhcohjdbbheldkiaed) for link extraction.
+
+#### Usage
+
+Go to niconico timeshift playback page, drag the then use the extension to extract the link.
+
+Paste the link into the CLI interface and download.
+
+#### Caution
+
+During the test, I found some IP of the IDC (aws) might have been banned and ran into some problems.
+
+You might see bunches of 403 error during download. The reason is unknown.
+
+So be careful using this tool.
 
 ### 🚩 Stream Recorder
 

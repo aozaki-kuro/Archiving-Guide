@@ -35,9 +35,21 @@ IF YOU HAVE ANY PROBLEMS, READ THE `README.MD` IN EVERY REPO FIRST.
 
 \*\* Check the support list of `youtube-dl` and `streamlink` to see if the target site is supported
 
+
+### 🧾 Changelog
+
+**2021/08/18**
+- Added `Minyami` for niconico timeshift download
+- Changed the style some badges
+
+<details>
+  <summary>Earlier Changelogs</summary>
+  TBD
+</details>
+
 ## 🚧 Disclaimer
 
-1. This Guide was written under CC BY-NC-SA 4.0 license, please confirm the guidelines before reposting.
+1. This Guide was written under `CC BY-NC-SA 4.0` license, please confirm the guidelines before reposting.
 2. This Guide does not provide any tool or script to grab DRM protected contents.
 3. This Guide is made for Hoshiyomis to archive Suisei's activities on the YouTube, Niconico and other streaming services.
 4. The copyright of all contents belongs to Hoshimachi Suisei / Hololive / Cover Corp. and the proper copyright holder/s.

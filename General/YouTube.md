@@ -1,9 +1,10 @@
 ## 🔨 Tool Preparation
 
-- youtube-dl - general purpose video downloader [[Github](https://github.com/ytdl-org/youtube-dl)]
-- aria2 - download accelerating [[Github](https://github.com/aria2/aria2)]
-- ffmpeg [[Github](https://github.com/FFmpeg/FFmpeg)] [[Guide Here](http://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/)]
-- AtomicParsley [[Github](https://github.com/wez/atomicparsley)]
+|Tool|Description|Download|
+|:--:|:--:|:--:|
+|youtube-dl|general purpose video downloader|[Github](https://github.com/ytdl-org/youtube-dl)|
+|ffmpeg|Fundemental media processor|[Github](https://github.com/FFmpeg/FFmpeg)|
+|AtomicParsley|Thumbnail processing|[Github](https://github.com/wez/atomicparsley)|
 
 ## 🔨 Easy Usage with Easy Scripts
 
