@@ -1,5 +1,7 @@
 ## ☁ OneDrive and Other Cloud Storage Provider
 
+![Windows 10](https://img.shields.io/badge/Onedrive-0078D6?style=for-the-badge&logo=microsoftonedrive&logoColor=white)
+
 Since not every has a NAS filled with 32TB hardrive running at home, local storage space can run low if you put everything in it. I suggest OneDrive / OneDrive for Business if you have a Microsoft 365 subscription.
 
 It also works for Google Drive or even Amazon S3 / Backblaze if you are rich enough.

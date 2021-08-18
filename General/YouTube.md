@@ -11,7 +11,7 @@
 
 Just paste the .bat files into the same folder as youtube-dl.exe (see picture below) and double click the .bat file to run. These scripts only provide barebones use of the tools, so if you want to use additional arguments, you will need to keep reading.
 
-![directory](https://github.com/aozaki-kuro/archive-guide/blob/main/assets/dir1.PNG)
+![directory](/assets/dir1.PNG)
 
 The video link can be a YouTube video, stream, or playlist link.
 
@@ -19,9 +19,9 @@ To download members-only streams, paste/replace the cookies.txt file in the fold
 
 Note: `youtube-dl` works for most streams in general, but for **No-archive** streams you need to use streamlink to record live.
 
-## 🎪 Windows Environment Preparation
+## 🎪 Environment Preparation
 
-[![Windows10](https://img.shields.io/badge/Windows%2010-20H2-blue)](https://www.microsoft.com/en-us/software-download/windows10)
+![Windows 10](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
 **※ If you are working on a headless server like I do, please read the [advanced guide](/Advanced/server.md)**
 
@@ -34,7 +34,7 @@ setx /M PATH "%PATH%;<REPLACE THIS WITH THE PATH TO YOUR DIRECTORY>"
 ```
 The `REPLACE THIS WITH THE PATH TO YOUR DIRECTORY` part should be the folder where your tools are in. In such case it would be "J:\Youtube Downloading"
 
-![directory](https://github.com/aozaki-kuro/archive-guide/blob/main/assets/dir1.PNG)
+![directory](/assets/dir1.PNG)
 
 Once you are done, put the tools in the folder. Start cmd (doesn't not have to be as administrator) and run the commands `youtube-dl --help` or `streamlink -h` etc. If you see a giant block of text showing you the arguments, that means it's working.
 
@@ -48,7 +48,7 @@ Another alternative way to install these are by using `pip3`. Just install `pyth
 
 ## Usage
 
-## 🚩 Youtube-dl
+## 🚩 youtube-dl
 
 Every tool is used from your Command Prompt. Type the following command into your console, replacing the "url" with the link to the video you want to download.
 
@@ -60,8 +60,6 @@ If ffmpeg is in the same folder as youtube-dl, it will automatically download th
 Alternatively, I prefer having it configured to download an .mp4 video, and accelerate the download with `aria2`. Here is my configuration:
 
 ```powershell
---external-downloader aria2c --external-downloader-args "-x 16 -k 1M"
-
 -o 'D:\Download\youtube\(upload_date)s %(title)s.%(ext)s'
 
 --embed-thumbnail
@@ -89,7 +87,7 @@ Also, the config takes 3 times of writing files which might take longer. *Wait p
 
 To download member streams, you will need the **cookies.txt** extension. Go to the member stream you want to download and grab the "Current Site" cookies. This will prompt you to save a `cookies.txt` file on your computer. The `--cookies` argument is used to point the location of the `cookies.txt` file. The same file is also used for the Easy Scripts above.
 
-### 🚩 Streamlink
+### 🚩 streamlink
 
 For **No Archive** streams youtube-dl doesn't work. We should use streamlink instead.
 

@@ -4,7 +4,7 @@ Virtual servers are running in server rooms with a way more stable condition and
 
 ## 🎬 Virtual Server Enviroment Preparation
 
-[![ubuntu](https://img.shields.io/badge/Ubuntu-20.04%20LTS-orange)](https://releases.ubuntu.com/20.04/) 
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
 I'm running the jobs on [Amazon Lightsail](https://lightsail.aws.amazon.com/). Local environment is Windows 10 with WSL 2.
 
@@ -25,20 +25,16 @@ sudo apt upgrade -y
 5. Run the [script](https://github.com/lovezzzxxx/liverecord) and it will setup the environment automatically. If you want to setup the environment manually, see below (I wish I know how to make a docker)
 
 ```bash
-sudo apt install python3
-sudo apt install python3-pip
+sudo apt install python3 python3-pip python-is-python3 ffmpeg atomicparsley
 sudo -H pip3 install --upgrade youtube-dl #sudo is required
 sudo -H pip3 install --upgrade streamlink
-sudo apt install ffmpeg
-sudo apt install atomicparsley
-sudo apt install aria2
 ```
 
 ## Usage
 
-### 🚩 Youtube-dl
+### 🚩 youtube-dl
 
-Should be the mostly used tool to download youtube-dl videos. Simple as it is.
+Should be the mostly used tool to download youtube-dl videos, as well as the generic `.m3u8`. Simple as it is.
 
 ```bash
 youtube-dl "url"
@@ -47,7 +43,6 @@ youtube-dl "url"
 But I prefer having it configured and accelarte the download with `aria2`. Here is my configuration:
 
 ```bash
---external-downloader aria2c --external-downloader-args "-x 16 -k 1M"
 
 -o '/home/ubuntu/raw/(upload_date)s %(title)s.%(ext)s'
 
@@ -68,13 +63,13 @@ Save it as `youtube-dl.conf` in e.g. `/home/ubuntu/youtube-dl.conf`. Then use `s
 
 Putting a `--cookies cookies.txt` option helps downloading the member-only contents.
 
-> To get a `cookies.txt` using the plugin: [[Chrome](https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid)] [[Firefox](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/)]
+To get a `cookies.txt` using the plugin: [[Chrome](https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid)] [[Firefox](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/)]
 
 Also, the config takes 3 times of writing files which might take longer. *Wait patiently.*
 
 > Downloaded video and audio → Merged .mp4 file → Write metadata → Write thumbnail with AtomicParsley
 
-### 🚩 Streamlink
+### 🚩 streamlink
 
 For **No Archive** streams youtube-dl doesn't work. We should use streamlink instead.
 
