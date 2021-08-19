@@ -69,13 +69,18 @@ Once you are done with installing, type `npm -v` to see if `npm` is functioning 
 
 Type `npm i -g minyami` to install `minyami`.
 
-Type `minyami version` to see if minyami installed.
+Type `minyami version` to see if minyami installed. Should return messages like this
 
-Install the [chrome extension](https://chrome.google.com/webstore/detail/minyami/cgejkofhdaffiifhcohjdbbheldkiaed) for link extraction.
+```
+Minyami / A lovely video downloader / 4.2.7
+うめにゃん~ (虎>ω<)
+```
+
+Then install the [chrome extension](https://chrome.google.com/webstore/detail/minyami/cgejkofhdaffiifhcohjdbbheldkiaed) for link and playback key extraction.
 
 #### Usage
 
-Go to niconico timeshift playback page, drag the then use the extension to extract the link.
+Go to niconico timeshift playback page, drag the progress bar to somewhere in the middle, then use the extension to extract the link.
 
 Paste the link into the CLI interface and download.
 
