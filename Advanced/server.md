@@ -6,29 +6,22 @@ Virtual servers are running in server rooms with a way more stable condition and
 
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
-I'm running the jobs on [Amazon Lightsail](https://lightsail.aws.amazon.com/). Local environment is Windows 10 with WSL 2.
-
-Read the guide about how to install WSL 2: [Link](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-
-Preparing the environment is pretty much the same on the VPS and the WSL. I will be writing the preparation on the VPS.
-
-1. Generate a pair of SSH keys (if you do not know what it is, a password is okay).
-2. Create a VPS and upload your SSH public key.
-3. Connect to your VPS through SSH
-4. Update first
+I'm running the jobs on [Amazon Lightsail](https://lightsail.aws.amazon.com/), using Ubuntu 20.04 LTS.
 
 ```bash
 sudo apt update
 sudo apt upgrade -y
 ```
 
-5. Run the [script](https://github.com/lovezzzxxx/liverecord) and it will setup the environment automatically. If you want to setup the environment manually, see below (I wish I know how to make a docker)
+Install the required components
 
 ```bash
 sudo apt install python3 python3-pip python-is-python3 ffmpeg atomicparsley
 sudo -H pip3 install --upgrade youtube-dl #sudo is required
 sudo -H pip3 install --upgrade streamlink
 ```
+
+For ffmpeg, it might require a higher version to deal with vp9 video/audio muxing, read [this article](https://ubuntuhandbook.org/index.php/2021/05/install-ffmpeg-4-4-ppa-ubuntu-20-04-21-04/) to find out how to install ffmpeg 4.4 or higher.
 
 ## Usage
 
@@ -85,12 +78,42 @@ streamlink "url" best --niconico-email "EMAIL" --niconico-password "PASSWORD" -o
 
 For AbemaTV, streamlink also works. But somehow it's a little bit slow. You can also use `yuu` instead [[Github](https://github.com/noaione/yuu)].
 
-### 🚩 Auto Monitor-Download Script
+### 🚩 minyami
 
-It's just a script, but the options are pretty complicated and was in Chinese so I will provide the lines I'm using.
+This starts from installing the `node.js` environment.
+
+I strongly recommend using `tj/n` instead of `nvm`, also don't install `npm` with `apt-get` to avoid permission problems.
+
+#### 1. Install `tj/n` and `Node.js`
+
+On most Linux / macOS machines, this should be able to install with the script
 
 ```bash
-nohup record/record_new.sh youtube "youtube_account_id" -f best -l 10 -o "auto_record" -dt 1 &
+curl -L https://git.io/n-install | bash
 ```
 
-The `-l` is the looping option, means recheck the streaming status in every 10 seconds. I suggest having a dry run before running this.
+Once it's installed, type `n lts` to install the latest lts version of Node.js.
+
+Check the original repo for more info: [`tj/n`](https://github.com/tj/n)
+
+#### 2. Extention
+
+This tool requires a Chrome extension to extract playback address and key to download the whole archive.
+
+Download the [Chrome extension](https://chrome.google.com/webstore/detail/minyami/cgejkofhdaffiifhcohjdbbheldkiaed) from the Chrome store, or build the extension from source [here](https://github.com/Last-Order/Minyami-chrome-extension).
+
+#### 3. Usage
+
+Go to a playback page, start the playback and drag the progress bar to somewhere near the middle to avoid extracting a bad link.
+
+Click the extenstion and extract the command, then paste it in your shell.
+
+This should be able to download fluently, no extra cookies are required.
+
+#### 4. Warning
+
+During the test, I found some IP of the IDC (e.g aws) might have been banned and ran into some problems.
+
+You might see bunches of 403 error during download. The reason is unknown.
+
+So be careful using this tool.

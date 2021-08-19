@@ -76,7 +76,7 @@ Minyami / A lovely video downloader / 4.2.7
 うめにゃん~ (虎>ω<)
 ```
 
-Then install the [chrome extension](https://chrome.google.com/webstore/detail/minyami/cgejkofhdaffiifhcohjdbbheldkiaed) for link and playback key extraction.
+Then install the [Chrome extension](https://chrome.google.com/webstore/detail/minyami/cgejkofhdaffiifhcohjdbbheldkiaed) for link and playback key extraction.
 
 #### Usage
 
@@ -86,7 +86,7 @@ Paste the link into the CLI interface and download.
 
 #### Caution
 
-During the test, I found some IP of the IDC (aws) might have been banned and ran into some problems.
+During the test, I found some IP of the IDC (e.g aws) might have been banned and ran into some problems.
 
 You might see bunches of 403 error during download. The reason is unknown.
 
