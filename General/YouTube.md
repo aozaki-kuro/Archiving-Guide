@@ -1,4 +1,4 @@
-## 🔨 Tool Preparation
+# 🔨 Tool Preparation
 
 |Tool|Description|Download|
 |:--:|:--:|:--:|
@@ -6,7 +6,7 @@
 |ffmpeg|Fundemental media processor|[Github](https://github.com/FFmpeg/FFmpeg)|
 |AtomicParsley|Thumbnail processing|[Github](https://github.com/wez/atomicparsley)|
 
-## 🔨 Easy Usage with Easy Scripts
+# 🔨 Easy Usage with Easy Scripts
 
 **※ If you don't want to do the configuration yourself, you can use the scripts provided [here](/scripts)**
 
@@ -20,7 +20,7 @@ To download members-only streams, paste/replace the cookies.txt file in the fold
 
 Note: `youtube-dl` works for most streams in general, but for **No-archive** streams you need to use streamlink to record live.
 
-## 🎪 Environment Preparation
+# 🎪 Environment Preparation
 
 ![Windows 10](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
@@ -47,7 +47,7 @@ Tips:
 
 Another alternative way to install these are by using `pip3`. Just install `python` [link](https://www.python.org/) and type `pip3 install youtube-dl` and `pip3 install streamlink`.
 
-## Usage
+# Usage
 
 ## 🚩 youtube-dl
 
@@ -56,10 +56,10 @@ Every tool is used from your Command Prompt. Type the following command into you
 ```powershell
 youtube-dl "url"
 ```
-If ffmpeg is in the same folder as youtube-dl, it will automatically download the best video and audio quality and merge it as a .mkv video file.
 
-Alternatively, I prefer having it configured to download an .mp4 video, and accelerate the download with `aria2`. Here is my configuration:
-
+<details>
+  <summary>Example Configuration</summary>
+  
 ```powershell
 -o 'D:\Download\youtube\(upload_date)s %(title)s.%(ext)s'
 
@@ -77,6 +77,8 @@ Alternatively, I prefer having it configured to download an .mp4 video, and acce
 **Notice: when you are downloading generic .m3u8 files from sites like SPWN, don't use `aria2` (add a `#` before the first line)**
 
 Then save it as `youtube-dl.conf` in `%APPDATA%\youtube-dl\config.txt` or `C:\Users\<user name>\youtube-dl.conf`, `youtube-dl.exe` will read the config from here.
+  
+</details>
 
 Putting a `--cookies` option helps downloading the member-only contents.
 
@@ -84,11 +86,11 @@ Also, the config takes 3 times of writing files which might take longer. *Wait p
 
 > Downloaded video and audio → Merged .mp4 file → Write metadata → Write thumbnail with AtomicParsley
 
-#### Member Streams
+### Member Streams
 
 To download member streams, you will need the **cookies.txt** extension. Go to the member stream you want to download and grab the "Current Site" cookies. This will prompt you to save a `cookies.txt` file on your computer. The `--cookies` argument is used to point the location of the `cookies.txt` file. The same file is also used for the Easy Scripts above.
 
-### 🚩 streamlink
+## 🚩 streamlink
 
 For **No Archive** streams youtube-dl doesn't work. We should use streamlink instead.
 
