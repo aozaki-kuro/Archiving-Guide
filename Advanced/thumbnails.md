@@ -1,4 +1,4 @@
-## 📌 Tag a Thumbnail
+# 📌 Tag a Thumbnail
 
 The only way to tag a thumbnail to `.mp4` file is by using `AtomicParsley`.
 

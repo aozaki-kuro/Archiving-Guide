@@ -1,12 +1,12 @@
-## 🤔 Tips & FAQs
+# 🤔 Tips & FAQs
 
-### ⚠ OBS
+## ⚠ OBS
 
 DON'T USE OBS TO RECORD THE SCREEN.
 
 No purpose doing this, if you have read the guide. Also OBS doesn't work for _DRM protected_ contents.
 
-### ⚠ Running Tasks in the Background (Ubuntu)
+## ⚠ Running Tasks in the Background (Ubuntu)
 
 Processes will terminated if the network interrupt and logged out. So I suggest use `nohup` to keep it running, add an `&` to let the command run whatever happens.
 
@@ -29,11 +29,11 @@ ps aux | grep -i "keyword"
 kill "process_id"
 ```
 
-### ⚠ Upper Case
+## ⚠ Upper Case
 
 Be careful, commands in Ubuntu are case sensitive, if you cannot run the command please check.
 
-### ⚠ Renaming
+## ⚠ Renaming
 
 I'm using `Renamer.exe` or modify the filename manually. I will write about the naming style:
 
@@ -53,7 +53,7 @@ The final output should be like this
 20210120【テトリス99】順位でガチャ配信の課金額が決まる⁉.mp4
 ```
 
-### ⚠ YouTube Video Encoding
+## ⚠ YouTube Video Encoding
 
 FYI YouTube needs time to encode the archive after the stream ended. You can download with `youtube-dl` right after with 1 thread enabled.
 
@@ -61,6 +61,6 @@ You can also wait for _30 minutes to serveral hours_ (depending on the length of
 
 Also, if the stream is **longer than 2 hours** and you didn't started recording it from the beginning, `youtube-dl` can just download the **last 2 hours' part** as soon as the stream ended. You have to wait until the whole archive finished encoding, then you can grab a intact archive.
 
-## 🔰 Issues
+# 🔰 Issues
 
 If you are having more questions, please [open an issue](https://github.com/aozaki-kuro/archive-guide/issues/new?assignees=&labels=question&template=questions.md&title=%5BQuestion%5D+) using the \[Question\] template.

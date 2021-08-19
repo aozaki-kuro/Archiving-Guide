@@ -1,4 +1,4 @@
-## ☁ OneDrive and Other Cloud Storage Provider
+# ☁ OneDrive and Other Cloud Storage Provider
 
 ![Windows 10](https://img.shields.io/badge/Onedrive-0078D6?style=for-the-badge&logo=microsoftonedrive&logoColor=white)
 
@@ -6,7 +6,7 @@ Since not every has a NAS filled with 32TB hardrive running at home, local stora
 
 It also works for Google Drive or even Amazon S3 / Backblaze if you are rich enough.
 
-### ☁ Uploading
+## ☁ Uploading
 
 In this project I use `OneDriveUploader` since I stored everything in a 5TB OneDrive Business Account, but you can use whichever cloud storage service you like.
 
@@ -60,7 +60,7 @@ You can use `rclone` instead if you want to, but it comsumes more memory and som
 
 So if you are going to use `rclone`, read the [official guide](https://rclone.org/onedrive/) carefully before processing.
 
-### ⚠ Invalid file names
+## ⚠ Invalid file names
 
 OneDrive/Sharepoint has a strict file name requirement, but it's basically the same as Windows 10.
 
