@@ -2,9 +2,9 @@
 
 Virtual servers are running in server rooms with a way more stable condition and usually faster Internet connection speed. You can also run the job and forget about it / prevent the job being interupted by your own expected moves.
 
-## 🎬 Virtual Server Enviroment Preparation
+## 🎬 Enviroment Preparation
 
-![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Apple](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)
 
 I'm running the jobs on [Amazon Lightsail](https://lightsail.aws.amazon.com/), using Ubuntu 20.04 LTS.
 
@@ -17,7 +17,7 @@ Install the required components
 
 ```bash
 sudo apt install python3 python3-pip python-is-python3 ffmpeg atomicparsley
-pip install --upgrade youtube-dl #sudo is required
+pip install --upgrade youtube-dl
 pip install --upgrade streamlink
 ```
 
@@ -33,26 +33,29 @@ Should be the mostly used tool to download youtube-dl videos, as well as the gen
 youtube-dl "url"
 ```
 
-But I prefer having it configured and accelarte the download with `aria2`. Here is my configuration:
+<details>
+  <summary>Configuration example</summary>
+  
+  ```bash
 
-```bash
+  -o '/home/ubuntu/raw/(upload_date)s %(title)s.%(ext)s'
 
--o '/home/ubuntu/raw/(upload_date)s %(title)s.%(ext)s'
+  --embed-thumbnail
 
---embed-thumbnail
+  --format 'bestvideo+bestaudio/best/mp4'
 
---format 'bestvideo+bestaudio/best/mp4'
+  --merge-output-format mp4
 
---merge-output-format mp4
+  --add-metadata
 
---add-metadata
+  --cookies '/home/ubuntu/cookies.txt'
+  ```
 
---cookies '/home/ubuntu/cookies.txt'
-```
+  ※ Replace `/home/ubuntu/` and `/home/ubuntu/raw` with your own working directories.
 
-※ Replace `/home/ubuntu/` and `/home/ubuntu/raw` with your own working directories.
-
-Save it as `youtube-dl.conf` in e.g. `/home/ubuntu/youtube-dl.conf`. Then use `sudo cp youtube-dl /etc/youtube-dl.conf` to make it a system-wide config.
+  Save it as `youtube-dl.conf` in e.g. `/home/ubuntu/youtube-dl.conf`. Then use `sudo cp youtube-dl /etc/youtube-dl.conf` to make it a system-wide config.
+  
+</details>
 
 Putting a `--cookies cookies.txt` option helps downloading the member-only contents.
 
