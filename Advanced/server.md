@@ -17,8 +17,8 @@ Install the required components
 
 ```bash
 sudo apt install python3 python3-pip python-is-python3 ffmpeg atomicparsley
-sudo -H pip3 install --upgrade youtube-dl #sudo is required
-sudo -H pip3 install --upgrade streamlink
+pip install --upgrade youtube-dl #sudo is required
+pip install --upgrade streamlink
 ```
 
 For ffmpeg, it might require a higher version to deal with vp9 video/audio muxing, read [this article](https://ubuntuhandbook.org/index.php/2021/05/install-ffmpeg-4-4-ppa-ubuntu-20-04-21-04/) to find out how to install ffmpeg 4.4 or higher.
